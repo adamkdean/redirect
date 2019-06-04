@@ -13,7 +13,10 @@ const express = require('express')
 const app = express()
 const port = process.env.HTTP_PORT || 80
 const location = process.env.REDIRECT_LOCATION || ''
-const statusCode = process.env.REDIRECT_STATUS_CODE || 307
+const statusCode = parseInt(process.env.REDIRECT_STATUS_CODE) || 307
 
 app.get('*', (req, res) => res.redirect(statusCode, location))
-app.listen(port, () => console.log(`adamkdean/redirect ${port}`))
+app.listen(port, () => {
+  console.log(`adamkdean/redirect listening on port ${port}`)
+  console.log(`redirecting requests to ${location} with statusCode ${statusCode}`)
+})
