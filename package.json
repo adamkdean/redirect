@@ -1,21 +1,10 @@
 {
   "name": "redirect",
   "version": "1.0.0",
-  "description": "Simple docker image that will redirect requests to a specified address",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/adamkdean/redirect.git"
-  },
-  "keywords": [],
-  "author": "",
+  "description": "Redirection lightweight companion container for the nginx-proxy.",
+  "main": "server.js",
+  "author": "Adam K Dean <adamkdean@googlemail.com?",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adamkdean/redirect/issues"
-  },
   "homepage": "https://github.com/adamkdean/redirect#readme",
   "dependencies": {
     "express": "^4.17.1"
