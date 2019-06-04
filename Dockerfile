@@ -5,10 +5,11 @@
 FROM library/node:8-alpine
 MAINTAINER Adam K Dean <adamkdean@googlemail.com>
 
+WORKDIR /www
+
 COPY package*.json ./
 RUN npm install --only=production
 
-WORKDIR /www
 COPY server.js /www/
 
 EXPOSE 80
