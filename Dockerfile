@@ -8,6 +8,7 @@ MAINTAINER Adam K Dean <adamkdean@googlemail.com>
 COPY package*.json ./
 RUN npm install --only=production
 
+WORKDIR /www
 COPY server.js /www/
 
 EXPOSE 80
