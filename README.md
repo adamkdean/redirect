@@ -74,3 +74,5 @@ services:
 - `302` for Found
 - `303` for See Other
 - `307` for Temporary Redirect
+
+`PRESERVE_URL` can be set to `true` to enable URLs to be preserve. When set to false, requests will redirect to the location, so `https://example.com/posts/24` will redirect to `https://www.example.com/`. When set to true, it will redirect to `https://www.example.com/posts/24` etc.
