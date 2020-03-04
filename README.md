@@ -12,6 +12,7 @@ docker run \
   --publish 80:80 \
   --env REDIRECT_STATUS_CODE=307 \
   --env REDIRECT_LOCATION="http://www.example.com" \
+  --env PRESERVE_URL=true \
   adamkdean/redirect
 ```
 
@@ -57,6 +58,7 @@ services:
       - VIRTUAL_HOST=example.com
       - REDIRECT_LOCATION="http://www.example.com"
       - REDIRECT_STATUS_CODE=301
+      - PRESERVE_URL=true
 
   example:
     image: example
