@@ -1,3 +1,6 @@
+![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)
+[![](https://img.shields.io/docker/stars/adamkdean/redirect.svg)](https://hub.docker.com/r/adamkdean/redirect 'DockerHub') [![](https://img.shields.io/docker/pulls/adamkdean/redirect.svg)](https://hub.docker.com/r/adamkdean/redirect 'DockerHub')
+
 # redirect
 
 `adamkdean/redirect` is a lightweight companion container for the nginx-proxy. It allows you to easily redirect hostnames, such as in the case of non-www to www.
