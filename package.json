@@ -1,6 +1,6 @@
 {
   "name": "redirect",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "Redirection lightweight companion container for the nginx-proxy.",
   "main": "server.js",
   "author": "Adam K Dean <adamkdean@googlemail.com?",
