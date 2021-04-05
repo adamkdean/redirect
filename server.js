@@ -15,7 +15,7 @@ const fs = require('fs')
 
 async function loadHosts() {
   try {
-    const hostPath = process.env.HOSTS_FILE_PATH || '/etc/redirect/hosts.json'
+    const hostPath = process.env.HOSTS_FILE_PATH || 'hosts.json'
     const hostsData = await fs.promises.readFile(hostPath, 'utf8')
     return JSON.parse(hostsData)
   } catch (e) {
@@ -54,8 +54,12 @@ async function runMultiHost(hosts) {
 
     // Handle the host if found
     if (index[host]) {
-      const destination = index[host].preserveUrl
+      let destination = index[host].preserveUrl
         ? index[host].destination + req.url : index[host].destination
+
+      if (destination.substr(0, 4) != 'http')
+        destination = `${req.protocol}://${destination}`
+
       return res.redirect(index[host].statusCode, destination)
     }
 
