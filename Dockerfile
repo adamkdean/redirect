@@ -2,7 +2,7 @@
 # adamkdean/redirect
 #
 
-FROM library/node:8-alpine
+FROM node:lts-alpine
 MAINTAINER Adam K Dean <adamkdean@googlemail.com>
 
 WORKDIR /www
