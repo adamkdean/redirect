@@ -7,7 +7,7 @@
 
 ## Versions
 
-- `latest`, `1.2`, `1.2.1` current version
+- `latest`, `1.2`, `1.2.3` current version
 - `1.1`, `1.1.0` pre-multihost version (4 April 2021 and before)
 
 ## Usage (standalone)
