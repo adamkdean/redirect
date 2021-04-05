@@ -5,6 +5,12 @@
 
 `adamkdean/redirect` is a lightweight companion container for the nginx-proxy. It allows you to easily redirect hostnames, such as in the case of non-www to www.
 
+## Versions
+
+`latest`, `1.2`, `1.2.1` current version
+
+`1.1`, `1.1.0` pre-multihost version (4 April 2021 and before)
+
 ## Usage (standalone)
 
 The container can be ran as a standalone container, that either redirects all requests or redirects requests based on a per host basis.
