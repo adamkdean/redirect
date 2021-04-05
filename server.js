@@ -15,7 +15,7 @@ const fs = require('fs')
 
 async function loadHosts() {
   try {
-    const hostPath = process.env.HOSTS_FILE_PATH || 'hosts.json'
+    const hostPath = process.env.HOSTS_FILE_PATH || '/etc/redirect/hosts.json'
     const hostsData = await fs.promises.readFile(hostPath, 'utf8')
     return JSON.parse(hostsData)
   } catch (e) {
