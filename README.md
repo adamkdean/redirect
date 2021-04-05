@@ -48,18 +48,20 @@ where `hosts.json` is a JSON file containing an array of configuration options:
 [
   {
     "source": "example.com",
-    "destination": "www.example.com",
+    "destination": "https://www.example.com",
     "preserveUrl": true
   },
   {
     "source": "another-example.com",
-    "destination": "www.another-example.com",
+    "destination": "https://www.another-example.com",
     "statusCode": 303
   }
 ]
 ```
 
 `source` and `destination` are required, but `preserveUrl` (default: false) and `statusCode` (default: 307) aren't.
+
+It's important to remember to specify the destination protocol, but not the source protocol.
 
 #### Overriding host file path
 
