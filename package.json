@@ -4,7 +4,7 @@
   "description": "Redirection lightweight companion container for the nginx-proxy.",
   "main": "server.js",
   "author": "Adam K Dean <adamkdean@googlemail.com?",
-  "license": "ISC",
+  "license": "MIT",
   "homepage": "https://github.com/adamkdean/redirect#readme",
   "dependencies": {
     "express": "^4.17.1"
