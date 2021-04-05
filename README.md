@@ -61,7 +61,7 @@ where `hosts.json` is a JSON file containing an array of configuration options:
 
 `source` and `destination` are required, but `preserveUrl` (default: false) and `statusCode` (default: 307) aren't.
 
-If you don't specify the protocol in the destination, it will use the current request protocol.
+If you don't specify the protocol in the destination, it will use the current request protocol. If you're running behind nginx-proxy, this will be http and will add an extra hop in.
 
 #### Overriding host file path
 
