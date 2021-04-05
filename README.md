@@ -43,12 +43,12 @@ where `hosts.json` is a JSON file containing an array of configuration options:
 [
   {
     "source": "example.com",
-    "dest": "www.example.com",
+    "destination": "www.example.com",
     "preserveUrl": true
   },
   {
     "source": "another-example.com",
-    "dest": "www.another-example.com",
+    "destination": "www.another-example.com",
     "statusCode": 303
   }
 ]
