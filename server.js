@@ -50,7 +50,7 @@ async function runMultiHost(hosts) {
   })
 
   app.get('*', (req, res, next) => {
-    const host = req.headers.host
+    const host = req.headers.host + req.url
 
     // Handle the host if found
     if (index[host]) {
