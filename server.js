@@ -28,6 +28,9 @@ async function runMultiHost(hosts) {
   const app = express()
   const port = process.env.HTTP_PORT || 80
   const index = {}
+  
+  // Disable x-powered-by header
+  app.disable('x-powered-by')
 
   hosts.forEach(host => {
     if (!host.source || !host.destination) {
@@ -77,6 +80,9 @@ async function runSingleHost() {
   const port = process.env.HTTP_PORT || 80
   const statusCode = parseInt(process.env.REDIRECT_STATUS_CODE) || 307
   const preserveUrl = process.env.PRESERVE_URL || false
+
+  // Disable x-powered-by header
+  app.disable('x-powered-by')
 
   let location = process.env.REDIRECT_LOCATION || ''
   if (!location) {
