@@ -28,7 +28,7 @@ async function runMultiHost(hosts) {
   const app = express()
   const port = process.env.HTTP_PORT || 80
   const index = {}
-  
+
   // Disable x-powered-by header
   app.disable('x-powered-by')
 
@@ -53,17 +53,22 @@ async function runMultiHost(hosts) {
   })
 
   app.get('*', (req, res, next) => {
-    const host = req.headers.host + req.url
+    let host = req.headers.host
+    let destination = null
+    let statusCode = 307
 
-    // Handle the host if found
-    if (index[host]) {
-      let destination = index[host].preserveUrl
-        ? index[host].destination + req.url : index[host].destination
+    if (index[host + req.url]) {
+      const hostUrl = host + req.url
+      destination = index[hostUrl].preserveUrl ? index[hostUrl].destination + req.url : index[hostUrl].destination
+      statusCode = index[hostUrl].statusCode
+    } else if (index[host]) {
+      destination = index[host].preserveUrl ? index[host].destination : index[host].destination
+      statusCode = index[host].statusCode
+    }
 
-      if (destination.substr(0, 4) != 'http')
-        destination = `${req.protocol}://${destination}`
-
-      return res.redirect(index[host].statusCode, destination)
+    if (destination) {
+      if (destination.substring(0, 4) != 'http') destination = `${req.protocol}://${destination}`
+      return res.redirect(statusCode, destination)
     }
 
     // Otherwise, 404
