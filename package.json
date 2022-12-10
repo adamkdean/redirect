@@ -7,7 +7,7 @@
   "license": "MIT",
   "homepage": "https://github.com/adamkdean/redirect#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "scripts": {
     "start": "node server.js",
